@@ -1,0 +1,27 @@
+{
+  "name": "openapi-utils-path-for-uri",
+  "version": "0.0.1",
+  "description": "Get an openapi path for an URI",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orangewise/openapi-utils-path-for-uri.git"
+  },
+  "keywords": [
+    "openapi",
+    "path",
+    "uri"
+  ],
+  "author": "Ronald Luitwieler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orangewise/openapi-utils-path-for-uri/issues"
+  },
+  "homepage": "https://github.com/orangewise/openapi-utils-path-for-uri#readme",
+  "devDependencies": {
+    "tape": "^4.6.2"
+  }
+}

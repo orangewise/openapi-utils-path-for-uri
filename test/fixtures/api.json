@@ -1,0 +1,19 @@
+{
+  "paths": {
+    "/animals/cats": {
+      "get": { }
+    },
+    "/animals/{par1}/cats/{par2}": {
+      "get": { }
+    },
+    "/animals/{par1}/cats": {
+      "get": { }
+    },
+    "/animals/{par1}/dogs": {
+      "get": { }
+    },
+    "/animals/{par1}/dogs/{par2}": {
+      "get": { }
+    }
+  }
+}
