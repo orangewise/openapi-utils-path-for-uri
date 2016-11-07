@@ -6,8 +6,10 @@ exports.pathForUri = function (api, path) {
   var returnPath;
   Object.keys(api['paths']).some(function (apiPath) {
     var regexString = apiPath.replace(/({[^}]*})/g, '([a-zA-Z-_0-9]+)');
+    // If there are no path params, we need an exact match.
+    var exactMatch = (regexString === apiPath) ? true : false;
     var re = new RegExp(regexString);
-    var match = re.test(path); 
+    var match = (exactMatch) ? (regexString === path) : re.test(path); 
     if (match && slashCnt(path) === slashCnt(regexString)) {
       returnPath = apiPath; 
       return true;

@@ -3,6 +3,9 @@
     "/animals/cats": {
       "get": { }
     },
+    "/animals/catsAndDogs": {
+      "get": { }
+    },
     "/animals/{par1}/cats/{par2}": {
       "get": { }
     },
