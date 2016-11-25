@@ -2,6 +2,7 @@
 
 [![npm version][npm-badge]][npm-url]
 [![Build Status][travis-badge]][travis-url]
+[![JavaScript Style Guide](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 Get an openApi path for an URI.
 
@@ -37,23 +38,23 @@ Given the following openApi definition:
 You can retrieve the paths like this:
 
 ```javascript
-var api = require('./your-openapi.json');
-var openApiUtils = require('openapi-utils-path-for-uri');
+var api = require('./your-openapi.json')
+var openApiUtils = require('openapi-utils-path-for-uri')
 
-var openApiPath1 = openApiUtils.pathForUri(api, '/animals/mammal/cats');
-console.log(openApiPath1);
+var openApiPath1 = openApiUtils.pathForUri(api, '/animals/mammal/cats')
+console.log(openApiPath1)
 /*
 /animals/{species}/cats
 */
 
-var openApiPath2 = openApiUtils.pathForUri(api, '/animals/mammal/dogs/terrier');
-console.log(openApiPath2);
+var openApiPath2 = openApiUtils.pathForUri(api, '/animals/mammal/dogs/terrier')
+console.log(openApiPath2)
 /*
 /animals/{species}/dogs/{breed}
 */
 
-var openApiPath3 = openApiUtils.pathForUri(api, '/animals/cats');
-console.log(openApiPath3);
+var openApiPath3 = openApiUtils.pathForUri(api, '/animals/cats')
+console.log(openApiPath3)
 /*
 /animals/cats
 */

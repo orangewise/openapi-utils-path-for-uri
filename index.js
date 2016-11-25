@@ -1,20 +1,19 @@
 var slashCnt = function (str) {
-  return str.split('/').length - 1;
-};
+  return str.split('/').length - 1
+}
 
 exports.pathForUri = function (api, path) {
-  var returnPath;
+  var returnPath
   Object.keys(api['paths']).some(function (apiPath) {
-    var regexString = apiPath.replace(/({[^}]*})/g, '([a-zA-Z-_0-9]+)');
+    var regexString = apiPath.replace(/({[^}]*})/g, '([a-zA-Z-_0-9]+)')
     // If there are no path params, we need an exact match.
-    var exactMatch = (regexString === apiPath) ? true : false;
-    var re = new RegExp(regexString);
-    var match = (exactMatch) ? (regexString === path) : re.test(path); 
+    var exactMatch = regexString === apiPath
+    var re = new RegExp(regexString)
+    var match = (exactMatch) ? (regexString === path) : re.test(path)
     if (match && slashCnt(path) === slashCnt(regexString)) {
-      returnPath = apiPath; 
-      return true;
+      returnPath = apiPath
+      return true
     }
-  });
-  return returnPath;
-};
-
+  })
+  return returnPath
+}
