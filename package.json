@@ -1,6 +1,6 @@
 {
   "name": "openapi-utils-path-for-uri",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Get an openapi path for an URI",
   "main": "index.js",
   "scripts": {
