@@ -5,7 +5,7 @@ var slashCnt = function (str) {
 exports.pathForUri = function (api, path) {
   var returnPath
   Object.keys(api['paths']).some(function (apiPath) {
-    var regexString = apiPath.replace(/({[^}]*})/g, '([a-zA-Z-_0-9]+)')
+    var regexString = apiPath.replace(/({[^}]*})/g, '([a-zA-Z-_0-9%]+)')
     // If there are no path params, we need an exact match.
     var exactMatch = regexString === apiPath
     var re = new RegExp(regexString)
