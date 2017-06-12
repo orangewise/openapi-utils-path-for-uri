@@ -3,7 +3,7 @@ var u = require('../.')
 
 test('pathForUri should return path from openapi definition', function (t) {
   var api = require('./fixtures/api.json')
-  t.plan(7)
+  t.plan(9)
   var s = u.pathForUri(api, '/animals/bla/cats', 'get')
   t.equal(s, '/animals/{par1}/cats', 'path with 1 par should be returned')
   s = u.pathForUri(api, '/animals/cats', 'get')
@@ -18,5 +18,9 @@ test('pathForUri should return path from openapi definition', function (t) {
   t.equal(s, '/animals/{par1}/dogs/{par2}', 'path with 2 pars is returned')
   s = u.pathForUri(api, '/animals/bla%2Fbla/dogs/x')
   t.equal(s, '/animals/{par1}/dogs/{par2}', 'path with 2 pars is returned when param is encoded')
+  s = u.pathForUri(api, '/')
+  t.equal(s, '/', '/ is returned when path === /')
+  s = u.pathForUri(api, '')
+  t.equal(s, '/', '/ is returned when path is empty')
   t.end()
 })

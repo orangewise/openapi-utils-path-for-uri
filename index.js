@@ -13,6 +13,10 @@ exports.pathForUri = function (api, path) {
     if (match && slashCnt(path) === slashCnt(regexString)) {
       returnPath = apiPath
       return true
+    } else if (!match && slashCnt(path) === 0) {
+      // Asume we are looking for '/'
+      returnPath = '/'
+      return true
     }
   })
   return returnPath
