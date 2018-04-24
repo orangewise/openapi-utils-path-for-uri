@@ -3,9 +3,11 @@ var u = require('../.')
 
 test('pathForUri should return path from openapi definition', function (t) {
   var api = require('./fixtures/api.json')
-  t.plan(9)
+  t.plan(10)
   var s = u.pathForUri(api, '/animals/bla/cats', 'get')
   t.equal(s, '/animals/{par1}/cats', 'path with 1 par should be returned')
+  s = u.pathForUri(api, '/animals/1.0/cats', 'get')
+  t.equal(s, '/animals/{par1}/cats', 'path with 1 number par should be returned')
   s = u.pathForUri(api, '/animals/cats', 'get')
   t.equal(s, '/animals/cats', 'path without pars is returned')
   s = u.pathForUri(api, '/animals/catsAndDogs', 'get')
